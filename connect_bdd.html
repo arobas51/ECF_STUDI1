@@ -1,0 +1,40 @@
+<!Doctype html>
+	<html>
+		<head>
+
+		</head>
+			<body>
+ <?php
+            $servername = 'localhost';
+            $username = 'root';
+            $password = 'root';
+
+            //On essaie de se connecter
+
+            $conn = new mysqli($servername, $username, $password);
+
+            //On définit le mode d'erreur de PDO sur Exception
+
+                        if($conn->connect_error){
+                die('Erreur : ' .$conn->connect_error);
+
+            }
+
+
+            echo 'Connexion réussie';
+
+             /*On capture les exceptions si une exception est lancée et on affiche
+             *les informations relatives à celle-ci*/
+
+            	            catch(PDOException $e){
+              echo "Erreur : " . $e->getMessage();
+            }
+
+            ?>
+
+
+
+
+
+				</body>
+</html>
